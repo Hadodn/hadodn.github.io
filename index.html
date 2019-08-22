@@ -1,94 +1,25 @@
-<img src="PrettyLana.jpg" width="750px" height="1000px"/>
-
-
-<br>
-
-
-
-<select id="dropdown">
-  <option value="test1">test1</option>
-  <option value="test2">test2</option>
-  <option value="test3">test3</option>
-</select>
-
-<script>
-function checkWhatsSelected()
-{
-	var e = document.getElementById("dropdown");
-	var strUser = e.options[e.selectedIndex].value;
-	alert(strUser);
-}
-
-function checkWhatsCalander()
-{
-	var e = document.getElementById("dateselect");
-	var strUser = e.value;
-	alert(strUser);
-}
-</script>
-
-<button onclick="checkWhatsSelected()">Check what's selected</button>
-
-<br><br>
-
-<!--Basic Calander-->
-<input id="dateselect" type="date" name="date_selector">
-<button onclick="checkWhatsCalander()">Check what's selected</button>
-
-
-<br><br>
-
-
-<!--Calander with default date-->
-<input id="dateselect2" type="date" name="date_selector" value="2019-06-13">
-
-
-<br><br><br><br>
-
-<!------------------------------------------------------- Barbrook Dropdown resting issue ----->
-
-<div id="date_selection" >
-	<p>Select a day:</p>
-	<select id="dropdown_day" >
-		<option value="01">1</option>
-		<option value="02">2</option>
-		<option value="03">3</option>
-	</select>
-	<p>Select a Month:</p>
-	<select id="dropdown_month">
-		<option value="01">1</option>
-		<option value="02">2</option>
-		<option value="03">3</option>
-	</select>
-	<p>Select a Year:</p>
-	<select id="dropdown_year">
-		<option value="2018">2018</option>
-		<option value="2019">2019</option>
-		<option value="2020">2020</option>
-	</select>
-	<button onclick="checkDate()">Check what Date from drop downs</button>
-	
-</div>
-
-<script>
-var day, month, year;
-
-function checkDate()
-{
-	var e = document.getElementById("dropdown_day");
-	var result = e.options[e.selectedIndex].value;
-	day=result
-	
-	e = document.getElementById("dropdown_month");
-	result = e.options[e.selectedIndex].value;
-	month=result
-	
-	e = document.getElementById("dropdown_year");
-	result = e.options[e.selectedIndex].value;
-	year=result
-	
-	DateSelected = new Date(year, month, day, 13, 30, 0)
-	alert(DateSelected.getDate() + "-" + DateSelected.getMonth() + "-" + DateSelected.getFullYear());
-}
-
-</script>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Dungeon Experiment</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Where Raf Though.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Dungeon Experiment</div>
+      </div>
+    </div>
+  </body>
+</html>
