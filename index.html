@@ -192,7 +192,8 @@
 <script>
 $( document ).ready(function() {
     console.log( "ready!" );
-	var characters = ["Hadduin"]
+	var characters = ["Acewarrior","Amylia","Balantine","Carmencrone","Cindyloo","Deathfoster","Didion","Dolletino","Duneltdock","Elphor","Gomrak","Hadduin","Jorgle","Kugadra","Repeacex","Rexei","Slangry","Tygafree","Zokara","Mistora"];
+
 	characters.forEach(function(item, index){
 	$.getJSON('https://raider.io/api/v1/characters/profile?region=eu&realm=draenor&name='+item+'&fields=mythic_plus_weekly_highest_level_runs', function(data) {
 		if(data.mythic_plus_weekly_highest_level_runs.length > 1)
