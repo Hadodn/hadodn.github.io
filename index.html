@@ -159,7 +159,7 @@
 								<tr class="row100 body">
 									<td class="cell100 column1" style="width:15%;">Matt</td>
 									<td class="cell100 column2">Mistora</td>
-									<td class="cell100 column3"><img src="images/no.png" id="Mistora" style="width:32px;height:32px;" /></td>
+									<td class="cell100 column3"><img src="images/no.png" id="Mistora" style="width:32px;height:48px;" /></td>
 								</tr>
 								
 								
@@ -196,12 +196,17 @@ $( document ).ready(function() {
 
 	characters.forEach(function(item, index){
 	$.getJSON('https://raider.io/api/v1/characters/profile?region=eu&realm=draenor&name='+item+'&fields=mythic_plus_weekly_highest_level_runs', function(data) {
-		if(data.mythic_plus_weekly_highest_level_runs.length > 1)
+		if(data.mythic_plus_weekly_highest_level_runs.length > 0)
 		{
+			if(data.mythic_plus_weekly_highest_level_runs[0].mythic_level >= 12 )
+			{
+				$("#"+data.name).attr("src","images/close.png");
+			}
 			if(data.mythic_plus_weekly_highest_level_runs[0].mythic_level >= 15)
 			{
 				$("#"+data.name).attr("src","images/yes.png");
 			}
+			
 		}
 		else
 		{
