@@ -50,6 +50,12 @@
 								</tr>
 								
 								<tr class="row100 body">
+									<td class="cell100 column1" style="width:15%;">Juliarys</td>
+									<td class="cell100 column2">Alt</td>
+									<td class="cell100 column3" id="Juliarys"></td>
+								</tr>
+								
+								<tr class="row100 body">
 									<td class="cell100 column1" style="width:15%;">Eliarys</td>
 									<td class="cell100 column2">Alt</td>
 									<td class="cell100 column3" id="Eliarys"></td>
@@ -97,7 +103,7 @@
 <script>
 $( document ).ready(function() {
     console.log( "ready!" );
-	var characters = ["Carmencrone","Eliarys","Pattern","Karah","Aryx","Saminya","Kelsiera","Syraile","Eleanore","Eliaris","Saminya","Sarys"];
+	var characters = ["Carmencrone","Eliarys","Pattern","Saminya","Juliarys"];
 
 	characters.forEach(function(item, index){
 	$.getJSON('https://raider.io/api/v1/characters/profile?region=eu&realm=draenor&name='+item+'&fields=mythic_plus_weekly_highest_level_runs', function(data) {
