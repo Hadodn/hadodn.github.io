@@ -1,0 +1,118 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <title>Who needs a key?</title>
+  <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta charset="utf-8"/>
+	<script src="js/jquery-3.4.1.min.js"></script>
+<!--===============================================================================================-->
+</head>
+
+<div class="site_header">
+<h1 class="top_title animated fadeIn delay-1s">Who needs a key?</h1>
+</div>
+
+		<div class="table-container animated fadeIn delay-2s">
+			<div class="wrap-table100" style="width:600px;">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1" style="width:15%;">Name</th>
+									<th class="cell100 column2">Main/Alt</th>
+									<th class="cell100 column3">Highest Key</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				<div class="table100-body js-pscroll" style="max-height:initial;">
+						<table>
+							<tbody>
+							
+								<tr class="row100 body">
+									<td class="cell100 column1" style="width:15%;">Carmencrone</td>
+									<td class="cell100 column2">Main</td>
+									<td class="cell100 column3" id="Carmencrone"></td>
+								</tr>
+								
+								<tr class="row100 body">
+									<td class="cell100 column1" style="width:15%;">Eliarys</td>
+									<td class="cell100 column2">Alt</td>
+									<td class="cell100 column3" id="Eliarys"></td>
+								</tr>
+								
+								<tr class="row100 body">
+									<td class="cell100 column1" style="width:15%;">Pattern</td>
+									<td class="cell100 column2">Alt</td>
+									<td class="cell100 column3" id="Pattern"></td>
+								</tr>
+								
+								<tr class="row100 body">
+									<td class="cell100 column1" style="width:15%;">Saminya</td>
+									<td class="cell100 column2">Alt</td>
+									<td class="cell100 column3" id="Saminya"></td>
+								</tr>
+													
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+
+
+
+
+<style>
+.table-container
+{
+	margin-top: 25px;
+	margin-left:33.3%;
+	width:50%;
+}
+
+.site_header {
+	text-align:center;
+	margin-top:40px;
+}
+
+</style>
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+	var characters = ["Carmencrone","Eliarys","Pattern","Karah","Aryx","Saminya","Kelsiera","Syraile","Eleanore","Eliaris","Saminya","Sarys"];
+
+	characters.forEach(function(item, index){
+	$.getJSON('https://raider.io/api/v1/characters/profile?region=eu&realm=draenor&name='+item+'&fields=mythic_plus_weekly_highest_level_runs', function(data) {
+		if(data.mythic_plus_weekly_highest_level_runs.length > 0)
+		{
+
+			$("#"+data.name).text(data.mythic_plus_weekly_highest_level_runs[0].mythic_level);
+			
+		}
+		else
+		{
+			$("#"+data.name).text("0");
+		}
+	});
+	});
+	
+});
+</script>
