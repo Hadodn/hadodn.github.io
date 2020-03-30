@@ -49,9 +49,9 @@
 								</tr>
 								
 								<tr class="row100 body">
-									<td class="cell100 column1" style="width:15%;">Alexander</td>
-									<td class="cell100 column2">Amylia</td>
-									<td class="cell100 column3"><img src="images/no.png" id="Amylia" style="width:32px;height:32px;" /></td>
+									<td class="cell100 column1" style="width:15%;">Rory</td>
+									<td class="cell100 column2">Gazreth</td>
+									<td class="cell100 column3"><img src="images/no.png" id="Gazreth" style="width:32px;height:32px;" /></td>
 								</tr>
 								
 								<tr class="row100 body">
@@ -155,13 +155,7 @@
 									<td class="cell100 column2">Zokara</td>
 									<td class="cell100 column3"><img src="images/no.png" id="Zokara" style="width:32px;height:32px;" /></td>
 								</tr>
-								
-								<tr class="row100 body">
-									<td class="cell100 column1" style="width:15%;">Matt</td>
-									<td class="cell100 column2">Mistora</td>
-									<td class="cell100 column3"><img src="images/no.png" id="Mistora" style="width:32px;height:48px;" /></td>
-								</tr>
-								
+													
 								
 							</tbody>
 						</table>
@@ -192,7 +186,7 @@
 <script>
 $( document ).ready(function() {
     console.log( "ready!" );
-	var characters = ["Acewarrior","Amylia","Balantine","Carmencrone","Cindyloo","Deathfoster","Didion","Dolletino","Duneltdock","Elphor","Gomrak","Hadduin","Jorgle","Kugadra","Repeacex","Rexei","Slangry","Tygafree","Zokara","Mistora"];
+	var characters = ["Acewarrior","Gazreth","Balantine","Carmencrone","Cindyloo","Deathfoster","Didion","Dolletino","Duneltdock","Elphor","Gomrak","Hadduin","Jorgle","Kugadra","Repeacex","Rexei","Slangry","Tygafree","Zokara","Mistora"];
 
 	characters.forEach(function(item, index){
 	$.getJSON('https://raider.io/api/v1/characters/profile?region=eu&realm=draenor&name='+item+'&fields=mythic_plus_weekly_highest_level_runs', function(data) {
