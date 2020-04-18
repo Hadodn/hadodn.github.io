@@ -62,8 +62,8 @@
 
 								<tr class="row100 body">
 									<td class="cell100 column1" style="width:15%;">Ellie</td>
-									<td class="cell100 column2">Carmencrone</td>
-									<td class="cell100 column3"><img src="images/no.png" id="Carmencrone" style="width:32px;height:32px;" /></td>
+									<td class="cell100 column2">Juliarys</td>
+									<td class="cell100 column3"><img src="images/no.png" id="Juliarys" style="width:32px;height:32px;" /></td>
 								</tr>
 								
 								<tr class="row100 body">
@@ -186,7 +186,7 @@
 <script>
 $( document ).ready(function() {
     console.log( "ready!" );
-	var characters = ["Acewarrior","Gazreth","Balantine","Carmencrone","Cindyloo","Deathfoster","Didion","Dolletino","Duneltdock","Elphor","Gomrak","Hadduin","Jorgle","Kugadra","Repeacex","Rexei","Slangry","Tygafree","Zokara","Mistora"];
+	var characters = ["Acewarrior","Gazreth","Balantine","Juliarys","Cindyloo","Deathfoster","Didion","Dolletino","Duneltdock","Elphor","Gomrak","Hadduin","Jorgle","Kugadra","Repeacex","Rexei","Slangry","Tygafree","Zokara","Mistora"];
 
 	characters.forEach(function(item, index){
 	$.getJSON('https://raider.io/api/v1/characters/profile?region=eu&realm=draenor&name='+item+'&fields=mythic_plus_weekly_highest_level_runs', function(data) {
